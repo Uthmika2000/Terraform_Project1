@@ -1,8 +1,8 @@
-provider "aws" {
-    region = "us-east-1"
-    access_key = "# not exposed"
-    secret_key = "# not exposed"
-}
+# provider "aws" {
+#     region = "us-east-1"
+#     access_key = "# not exposed"
+#     secret_key = "# not exposed"
+# }
 
 
 # 1. Create vpc

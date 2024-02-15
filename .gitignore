@@ -6,7 +6,7 @@
 .terraform/
 
 # Ignore .tfvars files, which may contain sensitive information
-*.tfvars
+*.env
 
 # Ignore override files (to avoid accidentally committing passwords or other sensitive information)
 override.tf
