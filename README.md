@@ -9,11 +9,13 @@
 ### 9. Create Ubuntu server and install/enable apache2
 
 #### Installed AWS  CLI version: aws-cli/1.16.133 Python/3.7 .(Restart VS Code after install)
-- Commnad: Invoke-WebRequest -Uri https://awscli.amazonaws.com/AWSCLIV2.msi -OutFile $env:TEMP\AWSCLIV2.msi; Start-Process -Wait -FilePath msiexec -ArgumentList /i,$env:TEMP\AWSCLIV2.msi
+- Commnad-1: Invoke-WebRequest -Uri https://awscli.amazonaws.com/AWSCLIV2.msi -OutFile $env:TEMP\AWSCLIV2.msi; Start-Process -Wait -FilePath msiexec -ArgumentList /i,$env:TEMP\AWSCLIV2.msi
 #### Installed "jq" commnad line JSON processor. (Will install in your current working directory. Move 'jq.exe' to 'C:\Windows\System32' to use it anywhere.)
-- Commnad: Invoke-WebRequest -Uri https://github.com/stedolan/jq/releases/download/jq-1.6/jq-win64.exe -OutFile jq.exe
-#### Used AWS Secrets Manager.
-- Command : aws secretsmanager get-secret-value --region my-reigon --secret-id my-secret-arn | jq -r '.SecretString' > .env  
+- Commnad-2: Invoke-WebRequest -Uri https://github.com/stedolan/jq/releases/download/jq-1.6/jq-win64.exe -OutFile jq.exe
+#### Used AWS Secrets Manager. (Make sure to use your 'my-reigon' and your 'my-secret-arn')
+- Command-3: aws secretsmanager get-secret-value --region my-reigon --secret-id my-secret-arn | jq -r '.SecretString' > .env
+
+#### If previous commnad (Command-3) is not working, then assign your credentials using 'aws configure' command (give 'json' as output format) and run previous command(Command-3) again.
 
 #### source .env  # Load environment variables from the .env file
 #### terraform apply --auto-approve
