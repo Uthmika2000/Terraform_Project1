@@ -1,7 +1,7 @@
 provider "aws" {
     region = "us-east-1"
-    access_key = "AKIA5FTZFVD7IGBIL4VZ"
-    secret_key = "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"
+    access_key = "# not exposed"
+    secret_key = "# not exposed"
 }
 
 
@@ -123,7 +123,7 @@ resource "aws_eip" "one" {
 }
 
 # 9. Create Ubuntu server and install/enable apache2
-resource "aws_instance" "web-server-instance" {
+resource "aws_instance" "web-server-instance1" {
   ami           = "ami-0c7217cdde317cfec"
   instance_type = "t2.micro"
   availability_zone = "us-east-1a"
